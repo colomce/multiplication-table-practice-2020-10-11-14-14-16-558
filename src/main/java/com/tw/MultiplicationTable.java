@@ -10,8 +10,8 @@ public class MultiplicationTable {
 
     private String buildMultiplicationTable(int firstNumber, int secondNumber) {
         StringBuilder multiplicationTable = new StringBuilder();
-        for(int multiplier = firstNumber; multiplier <= secondNumber; multiplier++){
-            for(int multplicand = firstNumber; multplicand <= multiplier; multplicand++){
+        for (int multiplier = firstNumber; multiplier <= secondNumber; multiplier++) {
+            for (int multplicand = firstNumber; multplicand <= multiplier; multplicand++) {
                 multiplicationTable.append(multplicand)
                         .append("*")
                         .append(multiplier)
@@ -26,7 +26,9 @@ public class MultiplicationTable {
 
     private boolean isValid(int firstNumber, int secondNumber) {
         boolean isFirstNumberSmaller = isFirstNumberSmallerOrEqual(firstNumber, secondNumber);
-        boolean allNumbersInRange = isInRange(1, 1000, firstNumber) && isInRange(1, 1000, secondNumber);
+        boolean firstNumberInRange = isInRange(1, 1000, firstNumber);
+        boolean secondNumberInRange = isInRange(1, 1000, secondNumber);
+        boolean allNumbersInRange = firstNumberInRange && secondNumberInRange;
 
         return isFirstNumberSmaller && allNumbersInRange;
     }
