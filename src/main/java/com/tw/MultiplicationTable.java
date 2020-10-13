@@ -11,13 +11,13 @@ public class MultiplicationTable {
     private String buildMultiplicationTable(int firstNumber, int secondNumber) {
         StringBuilder multiplicationTable = new StringBuilder();
         for (int multiplier = firstNumber; multiplier <= secondNumber; multiplier++) {
-            for (int multplicand = firstNumber; multplicand <= multiplier; multplicand++) {
-                multiplicationTable.append(multplicand)
+            for (int multiplicand = firstNumber; multiplicand <= multiplier; multiplicand++) {
+                multiplicationTable.append(multiplicand)
                         .append("*")
                         .append(multiplier)
                         .append("=")
-                        .append(multiplier * multplicand);
-                if(multplicand != multiplier) {
+                        .append(multiplicand * multiplier);
+                if(multiplicand != multiplier) {
                     multiplicationTable.append("  ");
                 }
             }
