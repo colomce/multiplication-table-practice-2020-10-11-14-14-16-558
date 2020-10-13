@@ -1,6 +1,10 @@
 package com.tw;
 
 public class MultiplicationTable {
+
+    private static final int MIN_RANGE = 1;
+    private static final int MAXIMUM_RANGE = 1000;
+
     public String create(int firstNumber, int secondNumber) {
         boolean isValid = isValid(firstNumber, secondNumber);
         String multiplicationTable = buildMultiplicationTable(firstNumber, secondNumber);
@@ -28,8 +32,8 @@ public class MultiplicationTable {
 
     private boolean isValid(int firstNumber, int secondNumber) {
         boolean isFirstNumberSmaller = isFirstNumberSmallerOrEqual(firstNumber, secondNumber);
-        boolean firstNumberInRange = isInRange(1, 1000, firstNumber);
-        boolean secondNumberInRange = isInRange(1, 1000, secondNumber);
+        boolean firstNumberInRange = isInRange(MIN_RANGE, MAXIMUM_RANGE, firstNumber);
+        boolean secondNumberInRange = isInRange(MIN_RANGE, MAXIMUM_RANGE, secondNumber);
         boolean allNumbersInRange = firstNumberInRange && secondNumberInRange;
 
         return isFirstNumberSmaller && allNumbersInRange;
