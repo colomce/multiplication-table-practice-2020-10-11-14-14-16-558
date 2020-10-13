@@ -16,12 +16,14 @@ public class MultiplicationTable {
                         .append("*")
                         .append(multiplier)
                         .append("=")
-                        .append(multiplier * multplicand)
-                        .append(" ");
+                        .append(multiplier * multplicand);
+                if(multplicand != multiplier) {
+                    multiplicationTable.append("  ");
+                }
             }
-            multiplicationTable.append("\n");
+            multiplicationTable.append("\r\n");
         }
-        return multiplicationTable.toString();
+        return multiplicationTable.toString().trim();
     }
 
     private boolean isValid(int firstNumber, int secondNumber) {
